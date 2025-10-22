@@ -20,7 +20,7 @@ const Projects = () => {
             {/* Project 1 */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl hover:scale-[1.01]">
               <Image
-                src="https://placehold.co/800x500/1A346F/ffffff?text=Hotel+Booking+Portal"
+                src="/images/project-hotel-portal.jpg"
                 alt="Web development project for luxury hotel booking portal interface"
                 className="w-full h-48 object-cover"
                 width={800}
@@ -46,7 +46,7 @@ const Projects = () => {
             {/* Project 2 */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl hover:scale-[1.01]">
               <Image
-                src="https://placehold.co/800x500/E67E22/ffffff?text=Product+Showcase"
+                src="/images/800x500/E67E22/ffffff?text=Product+Showcase"
                 alt="E-commerce web design for bespoke product showcase gallery"
                 className="w-full h-48 object-cover"
                 width={800}
@@ -72,7 +72,7 @@ const Projects = () => {
             {/* Project 3 */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl hover:scale-[1.01]">
               <Image
-                src="https://placehold.co/800x500/1A346F/ffffff?text=Education+Platform"
+                src="/images/800x500/1A346F/ffffff?text=Education+Platform"
                 alt="Web development screenshot for modern K-12 education platform"
                 className="w-full h-48 object-cover"
                 width={800}
@@ -106,7 +106,7 @@ const Projects = () => {
             {/* Design Project 1 */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl hover:scale-[1.01]">
               <Image
-                src="https://placehold.co/800x500/1A346F/ffffff?text=Brand+Identity"
+                src="/images/800x500/1A346F/ffffff?text=Brand+Identity"
                 alt="Graphic design examples for global brand identity development"
                 className="w-full h-48 object-cover"
                 width={800}
@@ -132,7 +132,7 @@ const Projects = () => {
             {/* Design Project 2 */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl hover:scale-[1.01]">
               <Image
-                src="https://placehold.co/800x500/E67E22/ffffff?text=Marketing+Assets"
+                src="/images/800x500/E67E22/ffffff?text=Marketing+Assets"
                 alt="Marketing asset graphic design examples for product launch campaign"
                 className="w-full h-48 object-cover"
                 width={800}
@@ -158,7 +158,7 @@ const Projects = () => {
             {/* Design Project 3 */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl hover:scale-[1.01]">
               <Image
-                src="https://placehold.co/800x500/1A346F/ffffff?text=App+UI%2FUX"
+                src="/images/800x500/1A346F/ffffff?text=App+UI%2FUX"
                 alt="Mobile app user interface UI/UX redesign mockup by YM Solutions"
                 className="w-full h-48 object-cover"
                 width={800}
@@ -192,7 +192,7 @@ const Projects = () => {
             {/* Game Project 1 */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl hover:scale-[1.01]">
               <Image
-                src="https://placehold.co/800x500/1A346F/ffffff?text=Mobile+Game"
+                src="/images/800x500/1A346F/ffffff?text=Mobile+Game"
                 alt="Mobile puzzle game development project 'BlockShift' gameplay"
                 className="w-full h-48 object-cover"
                 width={800}
@@ -218,7 +218,7 @@ const Projects = () => {
             {/* Game Project 2 */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl hover:scale-[1.01]">
               <Image
-                src="https://placehold.co/800x500/E67E22/ffffff?text=Educational+Game"
+                src="/images/800x500/E67E22/ffffff?text=Educational+Game"
                 alt="2D educational game development screenshot for 'MathWiz' kids game"
                 className="w-full h-48 object-cover"
                 width={800}
@@ -243,7 +243,7 @@ const Projects = () => {
             {/* Game Project 3 */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl hover:scale-[1.01]">
               <Image
-                src="https://placehold.co/800x500/1A346F/ffffff?text=VR+Experience"
+                src="/images/800x500/1A346F/ffffff?text=VR+Experience"
                 alt="VR architectural visualization walkthrough in Unreal Engine"
                 className="w-full h-48 object-cover"
                 width={800}
@@ -276,7 +276,7 @@ const Projects = () => {
             {/* Video Project 1 */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl hover:scale-[1.01]">
               <Image
-                src="https://placehold.co/800x500/E67E22/ffffff?text=Promo+Video"
+                src="/images/800x500/E67E22/ffffff?text=Promo+Video"
                 alt="SaaS promotional video editing example frame"
                 className="w-full h-48 object-cover"
                 width={800}
@@ -301,7 +301,7 @@ const Projects = () => {
             {/* Video Project 2 */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl hover:scale-[1.01]">
               <Image
-                src="https://placehold.co/800x500/1A346F/ffffff?text=Event+Highlight"
+                src="/images/800x500/1A346F/ffffff?text=Event+Highlight"
                 alt="Video editing example for corporate event highlight reel"
                 className="w-full h-48 object-cover"
                 width={800}
@@ -327,7 +327,7 @@ const Projects = () => {
             {/* Video Project 3 */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl hover:scale-[1.01]">
               <Image
-                src="https://placehold.co/800x500/E67E22/ffffff?text=YouTube+Content"
+                src="/images/800x500/E67E22/ffffff?text=YouTube+Content"
                 alt="YouTube channel video editing service example thumbnail"
                 className="w-full h-48 object-cover"
                 width={800}
