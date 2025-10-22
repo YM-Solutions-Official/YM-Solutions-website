@@ -46,16 +46,9 @@ export default function Header() {
               muted
               loop
               playsInline
-              poster="https://placehold.co/600x400/1A346F/ffffff?text=Loading+Media..."
+              poster="/images/600x400/1A346F/ffffff?text=Loading+Media..."
             >
               <source src="/videos/header.mp4" type="video/mp4" />
-              <Image
-                src="https://placehold.co/600x400/1A346F/ffffff?text=Strategy+%26+Results+Dashboard"
-                alt="YM Solutions digital strategy dashboard showing results for web, game, design and video projects"
-                width={600}
-                height={400}
-                className="w-full h-auto rounded-xl"
-              />
             </video>
             <div className="absolute inset-0 bg-corporate-navy opacity-10 rounded-xl"></div>
           </div>

@@ -1,23 +1,27 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
+      // 1. Connect your CSS variables to Tailwind colors
       colors: {
-        'corporate-navy': '#1A346F',
-        'corporate-accent': '#E67E22',
-        'light-bg': '#F7F9FC',
+        'corporate-navy': 'var(--color-corporate-navy)',
+        'corporate-accent': 'var(--color-corporate-accent)',
+        'light-bg': 'var(--color-light-bg)',
       },
+      // 2. Connect your CSS font variable to Tailwind's font utility
       fontFamily: {
-        sans: ['var(--font-inter)', 'sans-serif'],
+        sans: ['var(--font-sans)', 'sans-serif'],
       },
     },
   },
   plugins: [],
 };
+
 export default config;
+
