@@ -1,32 +1,28 @@
 import { DesignProject } from '@/lib/data/project-data';
 import Image from 'next/image';
 
-const DesignProjects = ({ projects }: { projects: DesignProject[] }) => {
+const DesignProjectsHome = ({ projects }: { projects: DesignProject[] }) => {
+  console.log(projects);
   return (
-    // Masonry-style grid for visual focus
-    <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {projects.map((project) => (
         <div
           key={project.id}
-          className="group relative overflow-hidden rounded-xl shadow-lg break-inside-avoid"
+          className="group relative aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer"
         >
           <Image
             src={project.imageUrl}
             alt={project.altText}
-            width={800}
-            height={800} // Using a square-ish aspect ratio works well for masonry
-            className="w-full h-auto object-cover transform transition-transform duration-500 group-hover:scale-105"
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-110"
           />
-          <div className="absolute inset-0 bg-black bg-opacity-70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-            <h3 className="text-white text-2xl font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-              {project.title}
-            </h3>
-            <p
-              className="text-corporate-accent text-lg font-semibold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
-              style={{ transitionDelay: '100ms' }}
-            >
-              {project.client}
-            </p>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
+            <div className="text-white">
+              <h3 className="text-sm font-semibold leading-tight">
+                {project.title}
+              </h3>
+              <p className="text-xs text-gray-300 mt-1">{project.client}</p>
+            </div>
           </div>
         </div>
       ))}
@@ -34,4 +30,4 @@ const DesignProjects = ({ projects }: { projects: DesignProject[] }) => {
   );
 };
 
-export default DesignProjects;
+export default DesignProjectsHome;

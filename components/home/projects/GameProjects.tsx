@@ -1,64 +1,57 @@
-import Image from 'next/image';
-import { Smartphone, Monitor, Code } from 'lucide-react'; // Example icons
 import { GameProject } from '@/lib/data/project-data';
+import Image from 'next/image';
+import { Smartphone, Monitor, Code } from 'lucide-react';
 
-// A simple component to render platform icons
 const PlatformIcons = ({
   platforms,
 }: {
   platforms: ('mobile' | 'desktop' | 'vr')[];
 }) => (
-  <div className="flex items-center space-x-2">
+  <div className="flex items-center space-x-1">
     {platforms.includes('mobile') && (
-      <span title="Mobile">
-        <Smartphone className="w-5 h-5 text-gray-400" />
-      </span>
+      <Smartphone className="w-4 h-4 text-gray-400" />
     )}
     {platforms.includes('desktop') && (
-      <span title="Desktop">
-        <Monitor className="w-5 h-5 text-gray-400" />
-      </span>
+      <Monitor className="w-4 h-4 text-gray-400" />
     )}
-    {platforms.includes('vr') && (
-      <span title="VR">
-        <Code className="w-5 h-5 text-gray-400" />
-      </span>
-    )}
+    {platforms.includes('vr') && <Code className="w-4 h-4 text-gray-400" />}
   </div>
 );
 
-const GameProjects = ({ projects }: { projects: GameProject[] }) => {
+const GameProjectsHome = ({ projects }: { projects: GameProject[] }) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {projects.map((project) => (
         <div
           key={project.id}
-          className="bg-white rounded-xl shadow-lg overflow-hidden group"
+          className="group bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
         >
           <div className="relative">
             <Image
               src={project.imageUrl}
               alt={project.altText}
-              width={800}
-              height={500}
-              className="w-full h-56 object-cover transform transition-transform duration-300 group-hover:scale-105"
+              width={400}
+              height={250}
+              className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
             />
           </div>
           <div className="p-6">
             <div className="flex justify-between items-start mb-2">
-              <h3 className="text-xl font-bold text-corporate-navy">
+              <h3 className="text-lg font-bold text-corporate-navy">
                 {project.title}
               </h3>
-              <span className="bg-corporate-accent text-white text-xs font-bold px-3 py-1 rounded-full">
+              <span className="bg-corporate-accent text-white text-xs font-bold px-2 py-1 rounded">
                 {project.engine}
               </span>
             </div>
             <p
-              className="text-gray-600 mb-4 text-sm"
+              className="text-gray-600 text-sm mb-3 line-clamp-2"
               dangerouslySetInnerHTML={{ __html: project.description }}
             />
-            <div className="border-t pt-3 flex justify-between items-center">
-              <p className="text-xs text-gray-500 font-semibold">PLATFORMS</p>
+            <div className="flex justify-between items-center">
+              <span className="text-xs text-gray-500 font-semibold">
+                {project.genre}
+              </span>
               <PlatformIcons platforms={project.platforms} />
             </div>
           </div>
@@ -68,4 +61,4 @@ const GameProjects = ({ projects }: { projects: GameProject[] }) => {
   );
 };
 
-export default GameProjects;
+export default GameProjectsHome;

@@ -33,13 +33,24 @@ export default function Home() {
       observer.observe(el);
     });
 
-    // Auto-open popup after delay
-    const popupTimeout = setTimeout(() => {
-      setIsPopupOpen(true);
-    }, 2000);
+    // Check if popup has been shown before
+    const hasShownPopup = localStorage.getItem('hasShownPopup');
+
+    if (!hasShownPopup) {
+      // Auto-open popup after delay only if it hasn't been shown before
+      const popupTimeout = setTimeout(() => {
+        setIsPopupOpen(true);
+        // Mark popup as shown
+        localStorage.setItem('hasShownPopup', 'true');
+      }, 2000);
+
+      return () => {
+        clearTimeout(popupTimeout);
+        observer.disconnect();
+      };
+    }
 
     return () => {
-      clearTimeout(popupTimeout);
       observer.disconnect();
     };
   }, []);
