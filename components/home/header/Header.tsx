@@ -46,7 +46,6 @@ export default function Header() {
               muted
               loop
               playsInline
-              poster="/images/600x400/1A346F/ffffff?text=Loading+Media..."
             >
               <source src="/videos/header.mp4" type="video/mp4" />
             </video>

@@ -127,13 +127,12 @@ const Navbar = () => {
           <nav className="flex justify-between items-center py-4 md:py-5">
             <Link href="#home" className="flex items-center space-x-2">
               <Image
-                src="/images/logo.jpg" // Assumes /public/YM_logo.jpg
+                src="/images/YM SOLUTION BLACK.png" 
                 alt="YM Solutions Logo"
-                width={40}
-                height={40}
-                className="w-10 h-10 rounded-lg shadow-md"
+                width={200}
+                height={35}
+                className="h-9"
               />
-              <h4 className="text-2xl font-bold text-black">Solutions</h4>
             </Link>
             <div className="hidden md:flex space-x-8 items-center text-sm">
               <Link
@@ -155,10 +154,16 @@ const Navbar = () => {
                 Our Process
               </Link>
               <Link
-                href="#projects"
+                href="#testimonials"
                 className="text-gray-600 hover:text-corporate-navy transition duration-150 font-medium"
               >
-                Our Work
+                Testimonials
+              </Link>
+              <Link
+                href="#faq"
+                className="text-gray-600 hover:text-corporate-navy transition duration-150 font-medium"
+              >
+                Faq
               </Link>
               <Link
                 href="#contact"

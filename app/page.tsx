@@ -1,5 +1,4 @@
 'use client';
-
 import { useEffect, useState } from 'react';
 import Popup from '@/components/common/Popup';
 import Header from '@/components/home/header/Header';
@@ -8,9 +7,11 @@ import ServicesSection from '@/components/home/service/Service';
 import Footer from '@/components/footer/Footer';
 import Contact from '@/components/home/contact/Contact';
 import Faq from '@/components/home/faq/Faq';
-import Projects from '@/components/home/projects/Project';
 import Process from '@/components/home/process/Process';
 import Navbar from '@/components/navbar/Navbar';
+import TrustedClients from '@/components/home/trusted/TrustedClients';
+import trustedClient from '@/lib/data/trustedClients';
+import Testimonials from '@/components/home/testimonials';
 
 export default function Home() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -62,9 +63,12 @@ export default function Home() {
       <Header />
       <MissionSection />
       <ServicesSection />
+      {/* <Projects /> */}
       <Process />
-      <Projects />
+      <TrustedClients logos={trustedClient}/>
+      <Testimonials/>
       <Faq />
+
       <Contact />
       <Footer />
     </main>

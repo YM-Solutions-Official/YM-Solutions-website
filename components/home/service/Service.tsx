@@ -10,7 +10,9 @@ export default function ServicesSection() {
             Core Digital Services
           </h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Updated grid to lg:grid-cols-3 to better fit 6 items */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Card 1: Web Design */}
           <div className="bg-white p-8 rounded-xl shadow-lg card-hover border-t-4 border-corporate-navy scroll-animate">
             <div className="mb-5 text-corporate-navy">
               <svg
@@ -43,6 +45,7 @@ export default function ServicesSection() {
             </ul>
           </div>
 
+          {/* Card 2: Graphic Design */}
           <div
             className="bg-white p-8 rounded-xl shadow-lg card-hover border-t-4 border-corporate-accent scroll-animate"
             style={{ transitionDelay: '100ms' }}
@@ -68,7 +71,7 @@ export default function ServicesSection() {
             </h3>
             <p className="text-gray-600 mb-4">
               Memorable brand identities with compelling visuals that capture
-              attention and communicate value.
+              attention and value.
             </p>
             <ul className="text-sm space-y-2 text-gray-600">
               <li>• Logo Design & Brand Guidelines</li>
@@ -78,6 +81,7 @@ export default function ServicesSection() {
             </ul>
           </div>
 
+          {/* Card 3: Game Development */}
           <div
             className="bg-white p-8 rounded-xl shadow-lg card-hover border-t-4 border-corporate-navy scroll-animate"
             style={{ transitionDelay: '200ms' }}
@@ -118,6 +122,7 @@ export default function ServicesSection() {
             </ul>
           </div>
 
+          {/* Card 4: Video Editing */}
           <div
             className="bg-white p-8 rounded-xl shadow-lg card-hover border-t-4 border-corporate-accent scroll-animate"
             style={{ transitionDelay: '300ms' }}
@@ -150,6 +155,78 @@ export default function ServicesSection() {
               <li>• YouTube & Social Content</li>
               <li>• Motion Graphics & Titles</li>
               <li>• Color Grading & Sound Design</li>
+            </ul>
+          </div>
+
+          {/* --- NEW Card 5: Digital Marketing & SEO --- */}
+          <div
+            className="bg-white p-8 rounded-xl shadow-lg card-hover border-t-4 border-corporate-navy scroll-animate"
+            style={{ transitionDelay: '400ms' }}
+          >
+            <div className="mb-5 text-corporate-navy">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-10 w-10"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+            </div>
+            <h3 className="text-xl font-bold mb-3 text-gray-900">
+              Digital Marketing & SEO
+            </h3>
+            <p className="text-gray-600 mb-4">
+              Boost your online visibility and attract qualified leads with
+              data-driven strategies.
+            </p>
+            <ul className="text-sm space-y-2 text-gray-600">
+              <li>• Search Engine Optimization</li>
+              <li>• Pay-Per-Click (PPC) Ads</li>
+              <li>• Content Marketing</li>
+              <li>• Email Marketing Campaigns</li>
+            </ul>
+          </div>
+
+          {/* --- NEW Card 6: Social Media Management --- */}
+          <div
+            className="bg-white p-8 rounded-xl shadow-lg card-hover border-t-4 border-corporate-accent scroll-animate"
+            style={{ transitionDelay: '500ms' }}
+          >
+            <div className="mb-5 text-corporate-accent">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-10 w-10"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.653-.084-1.284-.24-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.653.084-1.284.24-1.857M12 15c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0 0c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"
+                />
+              </svg>
+            </div>
+            <h3 className="text-xl font-bold mb-3 text-gray-900">
+              Social Media Management
+            </h3>
+            <p className="text-gray-600 mb-4">
+              Build a loyal community and elevate your brand presence across
+              social platforms.
+            </p>
+            <ul className="text-sm space-y-2 text-gray-600">
+              <li>• Strategy & Content Creation</li>
+              <li>• Community Engagement</li>
+              <li>• Social Media Advertising</li>
+              <li>• Analytics & Reporting</li>
             </ul>
           </div>
         </div>

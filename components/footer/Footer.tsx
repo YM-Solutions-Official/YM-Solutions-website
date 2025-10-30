@@ -9,13 +9,12 @@ const Footer = () => {
           <div className="md:col-span-2">
             <Link href="#home" className="flex items-center space-x-2 mb-4">
               <Image
-                src="/images/logo.jpg" // Assumes /public/YM_logo.jpg
+                src="/images/YM SOLUTION WHITE.png" // Assumes /public/YM_logo.jpg
                 alt="YM Solutions Logo"
-                width={40}
-                height={40}
-                className="w-10 h-10 rounded-lg shadow-md"
+                width={300}
+                height={35}
+                className="h-15 "
               />
-              <h4 className="text-2xl font-bold text-white">Solutions</h4>
             </Link>
             <p className="text-sm text-gray-400">
               Your dedicated partner in digital growth, delivering measurable

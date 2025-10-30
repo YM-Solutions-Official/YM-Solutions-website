@@ -128,7 +128,7 @@ const Contact = () => {
                   name="name"
                   placeholder="Arun Kumar"
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-corporate-navy focus:border-corporate-navy"
+                  className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg focus:ring-corporate-navy focus:border-corporate-navy"
                 />
               </div>
               <div className="mb-4">
@@ -144,7 +144,7 @@ const Contact = () => {
                   name="email"
                   placeholder="example@gmail.com"
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-corporate-navy focus:border-corporate-navy"
+                  className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg focus:ring-corporate-navy focus:border-corporate-navy"
                 />
               </div>
               <div className="mb-4">
@@ -158,7 +158,7 @@ const Contact = () => {
                   id="service"
                   name="service"
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-corporate-navy focus:border-corporate-navy"
+                  className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg focus:ring-corporate-navy focus:border-corporate-navy"
                 >
                   <option value="">Select a service...</option>
                   <option value="web_development">
@@ -185,7 +185,7 @@ const Contact = () => {
                   rows={4}
                   placeholder="Briefly describe your goals and expected timeline."
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-corporate-navy focus:border-corporate-navy"
+                  className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg focus:ring-corporate-navy focus:border-corporate-navy"
                 ></textarea>
               </div>
               <button

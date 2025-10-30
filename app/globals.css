@@ -7,6 +7,22 @@
   --font-sans: 'Inter', sans-serif;
 }
 
+/* Style Swiper pagination dots */
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: #ccc;
+  /* Inactive color */
+  opacity: 1;
+  transition: background-color 0.3s ease;
+}
+
+/* Active dot color - using your theme */
+/* Make sure your CSS variables are defined, or replace with hex codes */
+.swiper-pagination-bullet-active {
+  background-color: var(--corporate-navy, #0A2342);
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -214,11 +230,13 @@ body.no-scroll {
 
 /* Custom animation for video play button */
 @keyframes ping-slow {
+
   0%,
   100% {
     transform: scale(1);
     opacity: 0.8;
   }
+
   50% {
     transform: scale(1.1);
     opacity: 0.4;
