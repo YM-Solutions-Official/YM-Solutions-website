@@ -56,7 +56,7 @@ export const viewport: Viewport = {
 };
 
 
-const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || 'GTM-XXXXXXX';
+const GTM_ID = 'GTM-5BXTM22S';
 
 const jsonLd = {
   '@context': 'https://schema.org',
