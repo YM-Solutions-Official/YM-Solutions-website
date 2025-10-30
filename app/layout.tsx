@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'; // 1. Import Viewport
 import { Inter } from 'next/font/google';
 import './globals.css';
 import React from 'react'; // Added for completeness
+import Script from 'next/script'; // <-- GTM: IMPORT SCRIPT COMPONENT
 
 const inter = Inter({
   subsets: ['latin'],
@@ -115,12 +116,12 @@ const jsonLd = {
         },
       },
       {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
-          name: 'Video Editing',
-        },
+      '@type': 'Offer', 
+      itemOffered: {
+        '@type': 'Service', 
+        name: 'Video Editing',
       },
+    },
     ],
   },
   sameAs: [
@@ -142,8 +143,35 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+
+        {/* --- GTM: ADDED HEAD SNIPPET --- */}
+        <Script id="google-tag-manager" strategy="afterInteractive">
+          {`
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-58KTW2ZS');
+          `}
+        </Script>
+        {/* --- END GTM HEAD SNIPPET --- */}
+
       </head>
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased">
+        
+        {/* --- GTM: ADDED BODY SNIPPET (NOSCRIPT) --- */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-58KTW2ZS"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          ></iframe>
+        </noscript>
+        {/* --- END GTM BODY SNIPPET --- */}
+        
+        {children}
+      </body>
     </html>
   );
 }
