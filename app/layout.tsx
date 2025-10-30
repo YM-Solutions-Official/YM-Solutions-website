@@ -1,60 +1,40 @@
-import type { Metadata, Viewport } from 'next'; // 1. Import Viewport
+import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import React from 'react'; // Added for completeness
-import Script from 'next/script'; // <-- GTM: IMPORT SCRIPT COMPONENT
+import React from 'react';
+import Script from 'next/script';
 
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
 });
 
-// Define the base URL for metadata
 const siteUrl = 'https://ymsolutions.in';
 
 export const metadata: Metadata = {
-  // Use metadataBase to define the canonical URL
   metadataBase: new URL(siteUrl),
-
-  // Title template for dynamic page titles (e.g., "Services | YM Solutions")
   title: {
-    default:
-      'YM Solutions | Web, Design, SEO, Social Media Management, Game & Video Editing', // Corrected typo
+    default: 'YM Solutions | Web, Design, SEO, Social Media Management, Game & Video Editing',
     template: '%s | YM Solutions',
   },
-  description:
-    'YM Solutions delivers business growth through expert web development, professional graphic design, game development, and polished video editing. Based in Delhi.',
-
-  // --- 2. 'viewport' line is REMOVED from here ---
-
-  // SEO directives
+  description: 'YM Solutions delivers business growth through expert web development, professional graphic design, game development, and polished video editing. Based in Delhi.',
   robots: 'index, follow',
   publisher: 'YM Solutions',
-
-  // Keywords
-  keywords:
-    'web development, graphic design, game development, video editing, digital agency, custom web design, brand identity, logo design, mobile game development, full-stack development, corporate video production, youtube video editor, YM Solutions, business growth, branding, web agency, Delhi agency',
-
-  // Canonical URL for the root (handled by metadataBase and alternates)
+  keywords: 'web development, graphic design, game development, video editing, digital agency, custom web design, brand identity, logo design, mobile game development, full-stack development, corporate video production, youtube video editor, YM Solutions, business growth, branding, web agency, Delhi agency',
   alternates: {
     canonical: '/',
   },
-
-  // Favicon and app icons (handled by metadata)
   icons: {
     icon: '/images/logo.jpg',
   },
-
-  // Open Graph (for social sharing - Facebook, LinkedIn, etc.)
   openGraph: {
     title: 'YM Solutions | Web, Design, Game & Video Editing Agency',
-    description:
-      'YM Solutions delivers business growth through expert web development, professional graphic design, game development, and polished video editing.',
+    description: 'YM Solutions delivers business growth through expert web development, professional graphic design, game development, and polished video editing.',
     type: 'website',
-    url: '/', // Uses metadataBase
+    url: '/',
     images: [
       {
-        url: '/YM_logo.jpg', // Assumes this is in /public/YM_logo.jpg
+        url: '/YM_logo.jpg',
         width: 800,
         height: 600,
         alt: 'YM Solutions Logo',
@@ -62,24 +42,21 @@ export const metadata: Metadata = {
     ],
     siteName: 'YM Solutions',
   },
-
-  // Twitter Card (for sharing on X/Twitter)
   twitter: {
     card: 'summary_large_image',
     title: 'YM Solutions | Web, Design, Game & Video Editing Agency',
-    description:
-      'YM Solutions delivers business growth through expert web development, professional graphic design, game development, and polished video editing.',
-    images: ['/YM_logo.jpg'], // Uses metadataBase
+    description: 'YM Solutions delivers business growth through expert web development, professional graphic design, game development, and polished video editing.',
+    images: ['/YM_logo.jpg'],
   },
 };
 
-// --- 3. ADD THIS NEW 'viewport' EXPORT ---
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
 };
 
-// JSON-LD Schema for rich results in Google
+const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || 'GTM-XXXXXXX';
+
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
@@ -88,8 +65,7 @@ const jsonLd = {
   logo: `${siteUrl}/YM_logo.jpg`,
   telephone: '+91 93102 56281',
   email: 'contact@ymsolutions.in',
-  description:
-    'YM Solutions delivers business growth through expert web development, professional graphic design, game development, and polished video editing.',
+  description: 'YM Solutions delivers business growth through expert web development, professional graphic design, game development, and polished video editing.',
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'Digital Services',
@@ -116,12 +92,12 @@ const jsonLd = {
         },
       },
       {
-      '@type': 'Offer', 
-      itemOffered: {
-        '@type': 'Service', 
-        name: 'Video Editing',
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Video Editing',
+        },
       },
-    },
     ],
   },
   sameAs: [
@@ -139,37 +115,35 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <head>
+        {/* Google Tag Manager - Head Script */}
+        <Script
+          id="gtm-script"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','${GTM_ID}');
+            `,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-
-        {/* --- GTM: ADDED HEAD SNIPPET --- */}
-        <Script id="google-tag-manager" strategy="afterInteractive">
-          {`
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-58KTW2ZS');
-          `}
-        </Script>
-        {/* --- END GTM HEAD SNIPPET --- */}
-
       </head>
       <body className="font-sans antialiased">
-        
-        {/* --- GTM: ADDED BODY SNIPPET (NOSCRIPT) --- */}
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-58KTW2ZS"
-            height="0"
-            width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
-          ></iframe>
-        </noscript>
-        {/* --- END GTM BODY SNIPPET --- */}
-        
+        {/* Google Tag Manager - Body NoScript */}
+        <noscript
+          dangerouslySetInnerHTML={{
+            __html: `
+              <iframe src="https://www.googletagmanager.com/ns.html?id=${GTM_ID}"
+              height="0" width="0" style="display:none;visibility:hidden"></iframe>
+            `,
+          }}
+        />
         {children}
       </body>
     </html>
