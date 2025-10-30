@@ -55,6 +55,7 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || 'GTM-XXXXXXX';
 
 const jsonLd = {
